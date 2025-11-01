@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "python",
+      "display_name": "Python (Pyodide)",
+      "language": "python"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "python",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "cc50bb9f-d3cd-496e-8d65-d0f6dd562ac4",
+      "cell_type": "code",
+      "source": "#Importing Pandas\nimport pandas as pd\n\n#Creating dictionary with Column names (key) and Adding Member information next to each Column name (Values)\ndata = {\n  \"Name\": [\"Svetlana\",\"Santosh\",\"Debangana\",\"Gideon Danso\",\"Mosunmola Temitope Christianah\",\"Hana E\"],\n  \"Slack Username\": [\"Svetlana Sokolova\",\"Santosh T\",\"Debangana\",\"Joegidi4real\",\"Temmy\",\"Hana E\"],\n  \"Country\" :[\"United Kingdom\",\"United States of America\",\"United Kingdom\",\"Ghana\",\"Nigeria\",\"Canada\"],\n  \"Hobby\":[\"Playing Piano\",\"Tennis\",\"Badminton\",\"Listening to music\",\"Cooking\",\"Hiking\"],\n  \"Affiliation\":[\"Queens University Belfast\",\"University of Texas at San Antonio\",\"Queens University Belfast (Alumna)\",\"University of Cape Coast\",\"Obafemi Awolowo University\",\"Boise State University\"],\n  \"Favourite Gene (gene name)\":[\"TP53\",\"IFNB1\",\"BRCA2\", \"TNNT2\",\"KRAS\", \"POSTN\"]\n}\n\n#Converting the dictionary to Dataframe with custom row names for better clarity \ndf = pd.DataFrame(data, index = [\"Member 1\", \"Member 2\", \"Member 3\",\"Member 4\",\"Member 5\",\"Member 6\"])\n \n\n#Saving the dataframe as a csv file\ndf.to_csv('data.csv', index= True)\n\n\n#Read the CSV file and use the first column as index \ndf = pd.read_csv(\"data.csv\", index_col=0)\nprint(df)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "                                    Name     Slack Username  \\\nMember 1                        Svetlana  Svetlana Sokolova   \nMember 2                         Santosh          Santosh T   \nMember 3                       Debangana          Debangana   \nMember 4                    Gideon Danso       Joegidi4real   \nMember 5  Mosunmola Temitope Christianah              Temmy   \nMember 6                          Hana E             Hana E   \n\n                           Country               Hobby  \\\nMember 1            United Kingdom       Playing Piano   \nMember 2  United States of America              Tennis   \nMember 3            United Kingdom           Badminton   \nMember 4                     Ghana  Listening to music   \nMember 5                   Nigeria             Cooking   \nMember 6                    Canada              Hiking   \n\n                                 Affiliation Favourite Gene (gene name)  \nMember 1           Queens University Belfast                       TP53  \nMember 2  University of Texas at San Antonio                      IFNB1  \nMember 3  Queens University Belfast (Alumna)                      BRCA2  \nMember 4            University of Cape Coast                      TNNT2  \nMember 5          Obafemi Awolowo University                       KRAS  \nMember 6              Boise State University                      POSTN  \n"
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "ffb0b647-10a9-4948-9a13-292ac2b3866f",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
