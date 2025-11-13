@@ -50,8 +50,8 @@ def dna_to_protein(DNAseq):
         codon = DNAseq_valid[i:i + 3]
         if len(codon) < 3:
             break
-        # Go to the dictionary and find the suitable amino acid for the current codon in the translated DNA sequence.
-        # If the Stop codon is found, the translation will end. Another check for tha valid codon (this time for its presence in the dictionary).
+    # Go to the dictionary and find the suitable amino acid for the current codon in the translated DNA sequence.
+    # If the Stop codon is found, the translation will end. Another check for tha valid codon (this time for its presence in the dictionary).
         if codon in codon_dict:
             amino_acid = codon_dict[codon]
             if amino_acid == "Stop":
@@ -71,30 +71,25 @@ print("Protein sequence:", protein)
 """# HAMMING DISTANCE"""
 
 # Start function and assign the variables length to check the number of sumbols in the lines and print the count.
-# Set the condition (difference in line length) to raise an error.
-# Set the start of the difference between two line count, equal to 0.
-# Use range function to move through the line and to iterate every symbol.
-# Print lines for check
-# Return the result
 def hamming_distance(str1, str2):
   len1 = len(str1)
   len2 = len(str2)
   print(f"Length of str1 ('{str1}'): {len1}")
   print(f"Length of str2 ('{str2}'): {len2}")
-
-
+# Set the condition (difference in line length) to raise an error.
   if len(str1) != len(str2):
     raise ValueError("Different word length! Hamming distance requires strings of equal length.")
-
-
+# Set the start of the difference between two lines count, equal to 0.
   distance = 0
+# Use range function to move through the line and to iterate every symbol.
   for i in range(len(str1)):
         if str1[i] != str2[i]:
             distance += 1
+# Print lines for check         
   print(f"String 1: {str1}")
   print(f"String 2: {str2}")
+# Return the result
   return distance
-
 # Example
 str1 = "svetlana"
 str2 = "svetzavr"
