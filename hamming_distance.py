@@ -67,7 +67,7 @@ DNAseq = "ctccttggtt caagtaattc tcctgcctca gactccagag tagctgggat tacaggcgcc"
 protein = dna_to_protein(DNAseq)
 print("Protein sequence:", protein)
 
-"""# New Section"""
+"""# HAMMING DISTANCE"""
 
 # Start function and assign the variables length to check the number of sumbols in the lines and print the count.
 # Set the condition (difference in line length) to raise an error.
