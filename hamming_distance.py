@@ -100,3 +100,64 @@ str1 = "svetlana"
 str2 = "svetzavr"
 distance = hamming_distance(str1, str2)
 print(f"Hamming distance between '{str1}' and '{str2}' is '{distance}'")
+
+"""# PLOT REPRODUCTION"""
+# 1. a. Heatmap
+# Use the normalized gene expression dataset to plot a clustered heatmap of the top differentially expressed genes between HBR and UHR samples.
+# Label both genes and samples.
+# Use a color gradient (e.g., Blues) to indicate expression levels.
+
+# Import libraries for data visualisation
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load the dataset using URL
+url = 'https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/hbr_uhr_top_deg_normalized_counts.csv'
+df = pd.read_csv(url)
+
+# Check the dataset structure
+print(df.head())
+
+# Find the variance across samples for each gene 
+# to identify variance across samples for each gene
+variance = df.var(axis=1)
+# Sort by the variance and select the top N genes, here 50 genes were selected
+top_genes = variance.sort_values(ascending=False).head(50).index
+# Create new dataset which contains only highly expressed genes (50 chosen)
+df_top_genes = df.loc[top_genes]
+
+# Set of the figure size
+plt.figure(figsize=(12, 8))
+# Generate the heatmap: settings description:
+# set the color gradient for expression levels
+# create annotation with values
+# set the number of decimal places for expression levels meanings
+# set line width between cells
+# label for the color bar
+# label the columns (for samples)
+# label the rows (for genes)
+sns.clustermap(df_top_genes,
+            cmap='Blues',
+            annot=True,
+            fmt='.2f',
+            linewidths=0.5,
+            cbar_kws={'label': 'Expression Level'},
+            xticklabels=True,
+            yticklabels=True)
+# Add title to the heatmap
+plt.title('Heatmap of Top Differentially Expressed Genes (HBR vs UHR)', fontsize=16)
+# Show the plot
+plt.tight_layout()
+plt.show()
+
+# 1. b. Volcano Plot
+# Plot log2FoldChange vs log10(Padj) from the DEG results.
+# Color points by significance:
+# Upregulated: green
+# Downregulated: orange
+# Not significant: grey
+# Add dashed vertical lines at log2FoldChange = ±1.
+
+
