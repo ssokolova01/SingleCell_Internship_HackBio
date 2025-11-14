@@ -108,14 +108,20 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Load the dataset using URL
+# Load the dataset
 url = 'https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/hbr_uhr_top_deg_normalized_counts.csv'
 df = pd.read_csv(url)
 
 # Check the dataset structure
 print(df.head())
+print(df.columns)
 
-# Find the variance across samples for each gene 
+# There is no name for the column containing genes. 
+# Thus, set the 'Unnamed: 0' column (gene names) as the index and rename it to "Gene"
+df = df.set_index('Unnamed: 0')
+df.index.name = 'Gene'
+
+# Find the variance across samples for each gene
 # to identify variance across samples for each gene
 variance = df.var(axis=1)
 # Sort by the variance and select the top N genes, here 50 genes were selected
@@ -123,30 +129,36 @@ top_genes = variance.sort_values(ascending=False).head(50).index
 # Create new dataset which contains only highly expressed genes (50 chosen)
 df_top_genes = df.loc[top_genes]
 
-# Set of the figure size
-plt.figure(figsize=(12, 8))
-# Generate the heatmap: settings description:
-# set the color gradient for expression levels
-# create annotation with values
-# set the number of decimal places for expression levels meanings
-# set line width between cells
-# label for the color bar
-# label the columns (for samples)
-# label the rows (for genes)
-sns.clustermap(df_top_genes,
-            cmap='Blues',
-            annot=True,
-            fmt='.2f',
-            linewidths=0.5,
-            cbar_kws={'label': 'Expression Level'},
-            xticklabels=True,
-            yticklabels=True)
-# Add title to the heatmap
-plt.title('Heatmap of Top Differentially Expressed Genes (HBR vs UHR)', fontsize=16)
-# Show the plot
-plt.tight_layout()
-plt.show()
+# Set the figure size
+plt.figure(figsize=(8, 8))
+# Generate the heatmap using sns.clustermap
+# Save clustermap variable for further customization
+# Heatmap settings: 
+# cell color, line color, line width, no annotations in the cells, 
+# clustering and labeling by rows and columns, dendrogram size, 
+# color gradient legend size and popsition)
+g = sns.clustermap(df_top_genes,
+                   cmap='Blues',
+                   annot=False,
+                   linecolor='black',
+                   linewidths=0.5,
+                   xticklabels=True,
+                   yticklabels=True,
+                   row_cluster=True,
+                   col_cluster=True,
+                   dendrogram_ratio=(0.17, 0.17),
+                   cbar_pos=(0.05, 0.8, 0.03, 0.1)
+                  )
 
+# Add and customize the title (size and distance from the plot)
+g.fig.suptitle('Heatmap of Top Differentially Expressed Genes (HBR vs UHR)', fontsize=12, y=1.02)
+
+# Delete the name of the y-axis
+g.ax_heatmap.set_ylabel('')
+
+# Show the plot
+plt.show()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 1. b. Volcano Plot
 # Plot log2FoldChange vs log10(Padj) from the DEG results.
 # Color points by significance:
@@ -154,5 +166,52 @@ plt.show()
 # Downregulated: orange
 # Not significant: grey
 # Add dashed vertical lines at log2FoldChange = ±1.
+
+# Load the dataset
+url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/hbr_uhr_deg_chr22_with_significance.csv"
+data = pd.read_csv(url)
+
+# Check the dataset structure
+print(data.head())
+
+# Extract necessary columns
+log2fc = data['log2FoldChange']
+padj = data['PAdj']
+
+# Calculate -log10(Padj) for the y-axis and set the threshold (0.05)
+log10_padj = -np.log10(padj)
+significance_threshold = 0.05
+
+# Create a new column in the dataset table to for coloring the gene points based
+# on their significance using log2FoldChange levels
+data['Color'] = 'grey'
+data.loc[(data['PAdj'] < significance_threshold) & (data['log2FoldChange'] > 1), 'Color'] = 'green'
+data.loc[(data['PAdj'] < significance_threshold) & (data['log2FoldChange'] < -1), 'Color'] = 'orange'
+
+# Set up Seaborn style for the plot
+sns.set(style="whitegrid")
+# Create the volcano plot
+plt.figure(figsize=(10, 8))
+# Set the scatterplot style parameter to highlight data insights
+sns.scatterplot(x=log2fc, y=log10_padj, hue=data['Color'], palette={"green": "green", "orange": "orange", "grey": "grey"},
+                edgecolor="w", alpha=0.7, s=100)
+
+# Add vertical lines at log2FoldChange = ±1
+plt.axvline(x=1, color='black', linestyle='--')
+plt.axvline(x=-1, color='black', linestyle='--')
+
+# Add labels and title
+plt.xlabel('Log2 Fold Change', fontsize=14)
+plt.ylabel('-Log10 (Adjusted P-value)', fontsize=14)
+plt.title('Volcano Plot: Differential Expression Results', fontsize=16)
+
+# Custom the legend
+handles, labels = plt.gca().get_legend_handles_labels()
+labels = ['down', 'ns', 'up']
+plt.legend(handles, labels, title='significance', loc='upper right')
+
+# Show the plot
+plt.show()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
