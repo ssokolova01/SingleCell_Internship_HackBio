@@ -266,8 +266,87 @@ plt.legend(
 # Show the plot
 plt.show()
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# d. Correlation Heatmap
+# 2. d. Correlation Heatmap
 # Compute the correlation matrix of six key features:
 # radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean.
 # Plot as a heatmap with correlation values annotated.
 
+# Load the dataset
+url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv"
+df = pd.read_csv(url)
+
+# Create the scatter plot
+plt.figure(figsize=(7, 7))
+sns.scatterplot(data=df,
+                x='radius_mean',
+                y='texture_mean',
+                hue='diagnosis',
+                style='diagnosis',
+                markers='o',
+                s=100)
+# Remove the gridlines
+plt.grid(False)
+
+# Set the labels and the title
+plt.title('Scatter Plot of Radius vs Texture Mean', fontsize=14)
+plt.xlabel('radius_mean', fontsize=12)
+plt.ylabel('texture_mean', fontsize=12)
+
+# Display the legend
+# Customize the legend size, position and information
+plt.legend(
+    title='diagnosis',
+    fontsize=12,
+    loc='upper right',
+    bbox_to_anchor=(1, 1),
+    borderpad=1.5,
+    labelspacing=0.8,
+    title_fontsize='13',
+    borderaxespad=0.5
+)
+
+# Show the plot
+plt.show()
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 3. e. Scatter Plot (smoothness vs compactness)
+# Plot compactness_mean vs smoothness_mean colored by diagnosis.
+# Include gridlines and clear axis labels.
+
+# Load the dataset
+url = 'https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv'
+df = pd.read_csv(url)
+
+# Select six key features
+features = [
+    "radius_mean",
+    "texture_mean",
+    "perimeter_mean",
+    "area_mean",
+    "smoothness_mean",
+    "compactness_mean"
+]
+# Compute correlation matrix
+corr_matrix = df[features].corr()
+
+# Plot the heatmap with size, color and position settings
+plt.figure(figsize=(6, 6.5))
+sns.heatmap(
+    corr_matrix,
+    annot=True,
+    fmt=".1f",
+    cmap="Blues",
+    linewidths=0.5,
+    linecolor='black',
+    square=False,
+    cbar_kws={"shrink": 1}
+)
+
+# Add title
+plt.title("Correlation Heatmap of Key Breast Cancer Features", fontsize=12, pad=15)
+
+# Adjust layout
+plt.tight_layout()
+
+# Show the plot
+plt.show()
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
