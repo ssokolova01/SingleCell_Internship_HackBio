@@ -224,6 +224,7 @@ plt.legend(handles, labels, title='significance', loc='upper right')
 # Show the plot
 plt.show()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Part B – Breast Cancer Data Exploration
 
 # 1. c. Scatter Plot (radius vs texture)
 # Plot texture_mean vs radius_mean and color points by diagnosis (M = malignant, B = benign).
