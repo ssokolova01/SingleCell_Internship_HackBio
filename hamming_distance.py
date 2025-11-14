@@ -272,47 +272,6 @@ plt.show()
 # Plot as a heatmap with correlation values annotated.
 
 # Load the dataset
-url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv"
-df = pd.read_csv(url)
-
-# Create the scatter plot
-plt.figure(figsize=(7, 7))
-sns.scatterplot(data=df,
-                x='radius_mean',
-                y='texture_mean',
-                hue='diagnosis',
-                style='diagnosis',
-                markers='o',
-                s=100)
-# Remove the gridlines
-plt.grid(False)
-
-# Set the labels and the title
-plt.title('Scatter Plot of Radius vs Texture Mean', fontsize=14)
-plt.xlabel('radius_mean', fontsize=12)
-plt.ylabel('texture_mean', fontsize=12)
-
-# Display the legend
-# Customize the legend size, position and information
-plt.legend(
-    title='diagnosis',
-    fontsize=12,
-    loc='upper right',
-    bbox_to_anchor=(1, 1),
-    borderpad=1.5,
-    labelspacing=0.8,
-    title_fontsize='13',
-    borderaxespad=0.5
-)
-
-# Show the plot
-plt.show()
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# 3. e. Scatter Plot (smoothness vs compactness)
-# Plot compactness_mean vs smoothness_mean colored by diagnosis.
-# Include gridlines and clear axis labels.
-
-# Load the dataset
 url = 'https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv'
 df = pd.read_csv(url)
 
@@ -349,4 +308,10 @@ plt.tight_layout()
 
 # Show the plot
 plt.show()
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 3. e. Scatter Plot (smoothness vs compactness)
+# Plot compactness_mean vs smoothness_mean colored by diagnosis.
+# Include gridlines and clear axis labels.
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
