@@ -347,3 +347,8 @@ plt.legend(title="diagnosis", loc="upper left", fontsize=14)
 # Show the plot
 plt.show()
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 4. f. Density Plot (area distribution)
+# Plot kernel density estimates (KDE) of area_mean for both M and B diagnoses on the same axis.
+# Add legend and labeled axes.
+
+
