@@ -366,6 +366,12 @@ plt.title('Density Plot of Area Mean by Diagnosis', fontsize=14)
 plt.xlabel('area_mean', fontsize=12)
 plt.ylabel('Density', fontsize=12)
 
+# Customize the y-axis ticks manually
+KDE.set_ylim(0.00025, 0.00180)
+KDE.set_yticks([0.00000, 0.00025, 0.00050, 0.00075, 0.00100, 0.00125, 0.00150, 0.00175]) 
+KDE.set_xlim(100, 3000)
+KDE.set_xticks([0, 1000, 2000, 3000]) 
+
 # Adding legend
 plt.legend(title='Diagnosis', 
            fontsize=12,
