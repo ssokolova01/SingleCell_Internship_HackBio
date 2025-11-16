@@ -351,4 +351,31 @@ plt.show()
 # Plot kernel density estimates (KDE) of area_mean for both M and B diagnoses on the same axis.
 # Add legend and labeled axes.
 
+# Load the dataset
+url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv"
+df = pd.read_csv(url)
 
+# Plot KDE for 'area_mean' for both Malignant (M) and Benign (B) diagnoses
+plt.figure(figsize=(10, 6))  # Set the figure size
+
+sns.kdeplot(data=df[df['diagnosis'] == 'M'], x='area_mean', fill=True, color='blue', label='M', alpha=0.5)
+sns.kdeplot(data=df[df['diagnosis'] == 'B'], x='area_mean', fill=True, color='orange', label='B', alpha=0.5)
+
+# Adding title and labels
+plt.title('Density Plot of Area Mean by Diagnosis', fontsize=14)
+plt.xlabel('area_mean', fontsize=12)
+plt.ylabel('Density', fontsize=12)
+
+# Adding legend
+plt.legend(title='Diagnosis', 
+           fontsize=12,
+           loc='upper right',
+           bbox_to_anchor=(1, 1),
+           borderpad=1,
+           labelspacing=0.5,
+           title_fontsize='13',
+           borderaxespad=0.5
+           )
+
+# Show the plot
+plt.show()
