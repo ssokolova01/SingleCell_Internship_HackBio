@@ -313,5 +313,37 @@ plt.show()
 # Plot compactness_mean vs smoothness_mean colored by diagnosis.
 # Include gridlines and clear axis labels.
 
+# Load the dataset
+url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv"
+df = pd.read_csv(url)
 
+# Round the columns to the desired decimal places using numpy
+df['smoothness_mean'] = np.round(df['smoothness_mean'], 3)  # Round to 3 decimals for smoothness
+df['compactness_mean'] = np.round(df['compactness_mean'], 2)  # Round to 2 decimals for compactness
+
+# Create the scatter plot
+plot = sns.scatterplot(
+    data=df,
+    x="smoothness_mean",
+    y="compactness_mean",
+    hue="diagnosis",  # Color points based on diagnosis
+    style="diagnosis",  # Use different markers for 'M' and 'B'
+    markers=["o"],  # Use circle markers only
+    s=100  # Size of the markers
+)
+
+# Set labels and title
+plt.xlabel('smoothness_mean', fontsize=12)
+plt.ylabel('compactness_mean', fontsize=12)
+plt.title('Scatter Plot of Smoothness vs Compactness by Diagnosis', fontsize=14)
+
+# Customize the x-axis ticks manually (set the tick spacing to 0.025)
+plot.set_xlim(0.040, 0.16)
+plot.set_xticks([0.05, 0.075, 0.10, 0.125, 0.15])  # Adjust the range and step of x-ticks to 0.025
+
+# Add a legend with custom labels
+plt.legend(title="diagnosis", loc="upper left", fontsize=14)
+
+# Show the plot
+plt.show()
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
