@@ -383,7 +383,5 @@ plt.legend(title='Diagnosis',
            borderaxespad=0.5
            )
 
-plt.tight_layout(pad=2.0)
-
 # Show the plot
 plt.show()
