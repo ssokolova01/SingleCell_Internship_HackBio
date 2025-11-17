@@ -365,9 +365,6 @@ plot.set_xticks([0.05, 0.075, 0.10, 0.125, 0.15])  # Adjust the range and step o
 # Add a legend with custom labels
 plt.legend(title="diagnosis", loc="upper left", fontsize=14)
 
-# Remove gridlines
-plt.grid(False) 
-
 # Show the plot
 plt.show()
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
