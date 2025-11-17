@@ -238,9 +238,16 @@ plt.show()
 # 1. c. Scatter Plot (radius vs texture)
 # Plot texture_mean vs radius_mean and color points by diagnosis (M = malignant, B = benign).
 
-# Load the dataset
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
 url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv"
 df = pd.read_csv(url)
+
+# Make sure the 'diagnosis' column is correctly interpreted as a category
+df['diagnosis'] = df['diagnosis'].map({'M': 'M = Malignant', 'B': 'B = Benign'})
 
 # Create the scatter plot
 plt.figure(figsize=(7, 7))
@@ -266,7 +273,7 @@ plt.legend(
     fontsize=12,
     loc='upper right',
     bbox_to_anchor=(1, 1),
-    borderpad=1.5,
+    borderpad=1,
     labelspacing=0.8,
     title_fontsize='13',
     borderaxespad=0.5
