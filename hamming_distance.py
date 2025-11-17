@@ -178,6 +178,11 @@ plt.show()
 # Not significant: grey
 # Add dashed vertical lines at log2FoldChange = ±1.
 
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
 # Load the dataset
 url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/hbr_uhr_deg_chr22_with_significance.csv"
 data = pd.read_csv(url)
@@ -199,8 +204,6 @@ data['Color'] = 'grey'
 data.loc[(data['PAdj'] < significance_threshold) & (data['log2FoldChange'] > 1), 'Color'] = 'green'
 data.loc[(data['PAdj'] < significance_threshold) & (data['log2FoldChange'] < -1), 'Color'] = 'orange'
 
-# Set up Seaborn style for the plot
-sns.set(style="whitegrid")
 # Create the volcano plot
 plt.figure(figsize=(10, 8))
 # Set the scatterplot style parameter to highlight data insights
@@ -210,16 +213,21 @@ sns.scatterplot(x=log2fc, y=log10_padj, hue=data['Color'], palette={"green": "gr
 # Add vertical lines at log2FoldChange = ±1
 plt.axvline(x=1, color='black', linestyle='--')
 plt.axvline(x=-1, color='black', linestyle='--')
+threshold_y = -np.log10(significance_threshold)
+plt.axhline(y=threshold_y, color='black', linestyle='--')
 
 # Add labels and title
-plt.xlabel('Log2 Fold Change', fontsize=14)
-plt.ylabel('-Log10 (Adjusted P-value)', fontsize=14)
+plt.xlabel('log2FoldChange', fontsize=14)
+plt.ylabel('-log10PAdj', fontsize=14)
 plt.title('Volcano Plot: Differential Expression Results', fontsize=16)
 
 # Custom the legend
 handles, labels = plt.gca().get_legend_handles_labels()
-labels = ['down', 'ns', 'up']
+labels = ['Downregulated: orange', 'Upregulated: green', 'Not significant: grey']
 plt.legend(handles, labels, title='significance', loc='upper right')
+
+# Remove gridlines
+plt.grid(False) 
 
 # Show the plot
 plt.show()
