@@ -358,8 +358,8 @@ df = pd.read_csv(url)
 # Plot KDE for 'area_mean' for both Malignant (M) and Benign (B) diagnoses
 plt.figure(figsize=(10, 6))  # Set the figure size
 
-sns.kdeplot(data=df[df['diagnosis'] == 'M'], x='area_mean', fill=True, color='blue', label='M', alpha=0.5)
-sns.kdeplot(data=df[df['diagnosis'] == 'B'], x='area_mean', fill=True, color='orange', label='B', alpha=0.5)
+KDE = sns.kdeplot(data=df[df['diagnosis'] == 'M'], x='area_mean', fill=True, color='blue', label='M', alpha=0.5)
+KDE = sns.kdeplot(data=df[df['diagnosis'] == 'B'], x='area_mean', fill=True, color='orange', label='B', alpha=0.5)
 
 # Adding title and labels
 plt.title('Density Plot of Area Mean by Diagnosis', fontsize=14)
@@ -367,7 +367,7 @@ plt.xlabel('area_mean', fontsize=12)
 plt.ylabel('Density', fontsize=12)
 
 # Customize the y-axis ticks manually
-KDE.set_ylim(0.00025, 0.00180)
+KDE.set_ylim(0.00025, 0.003)
 KDE.set_yticks([0.00000, 0.00025, 0.00050, 0.00075, 0.00100, 0.00125, 0.00150, 0.00175]) 
 KDE.set_xlim(100, 3000)
 KDE.set_xticks([0, 1000, 2000, 3000]) 
@@ -382,6 +382,8 @@ plt.legend(title='Diagnosis',
            title_fontsize='13',
            borderaxespad=0.5
            )
+
+plt.tight_layout(pad=2.0)
 
 # Show the plot
 plt.show()
