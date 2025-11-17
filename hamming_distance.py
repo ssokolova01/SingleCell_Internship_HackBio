@@ -373,7 +373,7 @@ KDE.set_xlim(100, 3000)
 KDE.set_xticks([0, 1000, 2000, 3000]) 
 
 # Adding legend
-plt.legend(title='Diagnosis', 
+plt.legend(title='diagnosis', 
            fontsize=12,
            loc='upper right',
            bbox_to_anchor=(1, 1),
