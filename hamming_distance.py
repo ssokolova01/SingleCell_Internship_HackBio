@@ -356,7 +356,7 @@ url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collect
 df = pd.read_csv(url)
 
 # Plot KDE for 'area_mean' for both Malignant (M) and Benign (B) diagnoses
-plt.figure(figsize=(10, 6))  # Set the figure size
+plt.figure(figsize=(7, 6))  # Set the figure size
 
 KDE = sns.kdeplot(data=df[df['diagnosis'] == 'M'], x='area_mean', fill=True, color='blue', label='M', alpha=0.5)
 KDE = sns.kdeplot(data=df[df['diagnosis'] == 'B'], x='area_mean', fill=True, color='orange', label='B', alpha=0.5)
