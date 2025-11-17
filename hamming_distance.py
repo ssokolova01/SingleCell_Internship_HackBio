@@ -213,6 +213,7 @@ sns.scatterplot(x=log2fc, y=log10_padj, hue=data['Color'], palette={"green": "gr
 # Add vertical lines at log2FoldChange = ±1
 plt.axvline(x=1, color='black', linestyle='--')
 plt.axvline(x=-1, color='black', linestyle='--')
+# Add horizontal line for significance threshold (-log10(PAdj) = -log10(0.05))
 threshold_y = -np.log10(significance_threshold)
 plt.axhline(y=threshold_y, color='black', linestyle='--')
 
