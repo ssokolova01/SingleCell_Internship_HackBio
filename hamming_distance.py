@@ -372,6 +372,11 @@ plt.show()
 # Plot kernel density estimates (KDE) of area_mean for both M and B diagnoses on the same axis.
 # Add legend and labeled axes.
 
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
 # Load the dataset
 url = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/data-3.csv"
 df = pd.read_csv(url)
@@ -403,6 +408,9 @@ plt.legend(title='diagnosis',
            title_fontsize='13',
            borderaxespad=0.5
            )
+
+# Remove gridlines
+plt.grid(False) 
 
 # Show the plot
 plt.show()
