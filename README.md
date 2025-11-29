@@ -46,6 +46,8 @@ import seaborn as sns
 
 **1. Pre-processing** - Quality control & Normalization
 
+*Quality Control*
+
 - Remove duplicate gene names;
 
 - Assess cell  quality metrics (genes & UMI counts per cell, mitochondrial (MT), ribosomal (RIBO), hemoglobin (HB) gene content);
@@ -54,8 +56,16 @@ import seaborn as sns
 - Filtering was not performed due to minimal contamination (MT genes < 2%; RIBO genes < 5%; no HB genes detected);
 
 - Remove doublets using scrublet.
+
+*Normalization*
+
+- Standardize expression;
+
+- Select highly variable genes (top 1000 genes were selected).
    
 2. **Cell Population Analysis** - PCA, Leiden clustering, UMAP
+
+   
    
 3. **Annotation** - Cell type identification, UMAP visualization of annotated cells
 
