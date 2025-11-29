@@ -9,11 +9,8 @@
 <img width="482" height="388" alt="image" src="https://github.com/user-attachments/assets/7cb44232-56fe-416b-8c04-5154ae89e743" />
 
 
-**Interpreting Cell Types and Biological Context in a Single-Cell Dataset**
 
-**Analysis of the Datasets:  Interpretation of the Biology Behind the Cell Types**
-
-## **Objective:** Analyze bone marrow sample using scRNA-seq within Scanpy Toolkit
+## **Objective:** Sample origin identification and biological interpretation of cell types found in the single-cell dataset.
 
 ## Workflow
 
