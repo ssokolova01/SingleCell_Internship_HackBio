@@ -111,7 +111,7 @@ Neutrophils, Gamma delta T cells (γδ T Lymphocytes), Nuocytes (Type 2 Innate L
 
 ## **Biological Interpretation**
 
-**The set of the found cell clusters corresponds to peripheral blood tissue.**
+**The set of the found cell clusters corresponds to peripheral blood.**
 
 Reasons to reject bone marrow origin of sequenced sample.
 
@@ -143,5 +143,5 @@ Given their unique nature as anucleate cell fragments, the low occurrence of pla
 
 ***Functional state.*** Immune system activation. Inflammation, most likely infectious nature. Expression of CCL genes coding chemokines, which are markers of active infection inflammation process. 
 
-***Conclusion.*** Cell cluster qualitative and quantitative distribution presents peripheral blood tissue in activated immune system status and acute intense inflammation process, most probably caused by infection. Further functional gene analysis is required to clarify the nature of the pathology.
+***Conclusion.*** Cell cluster qualitative and quantitative distribution presents peripheral blood in activated immune system status and acute intense inflammation process, most probably caused by infection. Further functional gene analysis is required to clarify the nature of the pathology.
 
