@@ -1,5 +1,5 @@
 # SingleCell_Internship_HackBio
-**Project Stage 2**
+# Project Stage 2
 
 **Bone Marrow Sample Dataset Analysis within a Single-Cell RNA-Seq Analysis**
 
