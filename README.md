@@ -6,8 +6,10 @@ Project Stage 2
 <img width="803" height="647" alt="image" src="https://github.com/user-attachments/assets/7cb44232-56fe-416b-8c04-5154ae89e743" />
 
 
-Bone Marrow Sample Dataset Analysis within a Single-Cell RNA-Seq Analysis
+**Bone Marrow Sample Dataset Analysis within a Single-Cell RNA-Seq Analysis**
 
-Based On the Replication of the Principal Scanpy Workflow 
+**Based On the Replication of the Principal Scanpy Workflow**
+
+
 
 
