@@ -12,6 +12,9 @@
 <img width="803" height="647" alt="image" src="https://github.com/user-attachments/assets/7cb44232-56fe-416b-8c04-5154ae89e743" />
 
 
+**Interpreting Cell Types and Biological Context in a Single-Cell Dataset**
+
+**Analysis of the Datasets:  Interpretation of the Biology Behind the Cell Types**
 
 
 
