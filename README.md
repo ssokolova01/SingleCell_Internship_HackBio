@@ -15,7 +15,9 @@
 ## Workflow
 
 **0. Tools And Dataset Preparation** - Packages and libaries installation, Loading and exploring dataset structure
+
 *Installation*
+
 !pip install scanpy
 
 !pip install anndata
