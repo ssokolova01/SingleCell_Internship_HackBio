@@ -7,6 +7,7 @@ Project Stage 2
 
 
 Bone Marrow Sample Dataset Analysis within a Single-Cell RNA-Seq Analysis
-Based On the Replication of the Principal Single-Cell Analysis Scanpy Workflow 
+
+Based On the Replication of the Principal Scanpy Workflow 
 
 
