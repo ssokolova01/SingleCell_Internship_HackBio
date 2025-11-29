@@ -126,12 +126,7 @@ The identified cell type which is the most atypical for bone marrow is nuocytes,
 ## **Conclusion**
 
 ***Reference context.*** Apart from erythrocytes (red blood cells), the typical peripheral blood contains leukocytes (neutrophils, lymphocytes, monocytes, eosinophils, basophils) and thrombocytes (platelets). 
-
-Eosinophils and basophils have very low level or can be absent. 
-
-Neutrophils, lymphocytes, monocytes and platelets are essential. 
-
-In healthy adult human blood, neutrophils prevail over lymphocytes, and platelets prevail over white blood cells. 
+Eosinophils and basophils have very low level or can be absent. Neutrophils, lymphocytes, monocytes and platelets are essential. In healthy adult human blood, neutrophils prevail over lymphocytes, and platelets prevail over white blood cells. 
 
 ***Single cell analysis insights.***
 
