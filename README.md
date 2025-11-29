@@ -49,7 +49,6 @@ import seaborn as sns
 - Remove duplicate gene names;
 
 - Assess cell  quality metrics (genes & UMI counts per cell, mitochondrial (MT), ribosomal (RIBO), hemoglobin (HB) gene content);
-
 Filtering thresholds: MT < 5%, RB < 10%, and HB < 5%
 
 - Filtering was not performed due to minimal contamination (MT genes < 2%; RIBO genes < 5%; no HB genes detected);
