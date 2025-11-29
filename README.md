@@ -16,6 +16,17 @@
 
 **Analysis of the Datasets:  Interpretation of the Biology Behind the Cell Types**
 
+**Objective:** Analyze bone marrow sample using scRNA-seq within Scanpy Toolkit
+
+## Workflow
+
+0. **Tools And Dataset Preparation** - Packages and libaries installation, Loading and exploring dataset structure
+
+1. **Pre-processing** - Quality control & Normalization
+   
+2. **Cell Population Analysis** - PCA, Leiden clustering, UMAP
+   
+3. **Annotation** - Cell type identification, UMAP visualization of annotated cells
 
 
 
