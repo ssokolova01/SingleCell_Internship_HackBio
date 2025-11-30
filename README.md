@@ -111,7 +111,7 @@ Neutrophils, Gamma delta T cells (γδ T Lymphocytes), Nuocytes (Type 2 Innate L
 
 ## **Biological Interpretation**
 
-**The set of the found cell clusters corresponds to peripheral blood (leukocyte-enriched fraction).**
+**The set of the found cell clusters corresponds to peripheral blood (leukocyte-enriched fraction; RBCs removed during scRNA-seq sample preparation).**
 
 Reasons to reject bone marrow origin of sequenced sample.
 
