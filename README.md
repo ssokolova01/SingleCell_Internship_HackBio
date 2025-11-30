@@ -109,15 +109,17 @@ Neutrophils, Gamma delta T cells (γδ T Lymphocytes), Nuocytes (Type 2 Innate L
 
 *Monocytes*: the largest white blood cells; detect and respond to pathogens, involved in inflammation, tissue repair and maintain balance of the immune system; transform into macrophages and dendritic cells when migrate in tissues.
 
+(MSD Manuals, Cellular Components of the Immune System; Miltenyi Biotec MACS Handbook)
+
 ## **Biological Interpretation**
 
 **The set of the found cell clusters corresponds to peripheral blood (leukocyte-enriched fraction; RBCs removed during scRNA-seq sample preparation).**
 
 Reasons to reject bone marrow origin of sequenced sample.
 
-Bone marrow of the healthy adult contains blood-forming hematopoietic stem cells (HSC) and structural mesenchymal stem cells (MSC) lineage populations. From MSC develop stromal lineages including mesenchymal stromal cells, osteoblasts (bone-forming cells), and adipocytes (fat cells). Principal cell lineages of the bone marrow are myeloid and lymphoid lineages, which starts from the myeloid and lymphoid progenitor cells. Common myeloid progenitor cell then proceeds into megakaryocytic, erythroid and myeloid lineages which start from megakaryocyte-erythrocyte progenitor cell and granulocyte-monocyte progenitor cell. Common lymphoid progenitor is responsible for all the lymphoid lineage cells from lymphoblast to lymphocytes and NK cells. Lineages start from blast stage, then they progress in differentiation, and their names depend on cell line. 
+Bone marrow of the healthy adult contains blood-forming hematopoietic stem cells (HSC) and structural mesenchymal stem cells (MSC) lineage populations. From MSC develop stromal lineages including mesenchymal stromal cells, osteoblasts (bone-forming cells), and adipocytes (fat cells). Principal cell lineages of the bone marrow are myeloid and lymphoid lineages, which starts from the myeloid and lymphoid progenitor cells. Common myeloid progenitor cell then proceeds into megakaryocytic, erythroid and myeloid lineages which start from megakaryocyte-erythrocyte progenitor cell and granulocyte-monocyte progenitor cell. Common lymphoid progenitor is responsible for all the lymphoid lineage cells from lymphoblast to lymphocytes and NK cells. Lineages start from blast stage, then they progress in differentiation, and their names depend on cell line. (Human Cell Atlas; Mahalingaiah et al.)
 
-There are no Hematopoietic Stem and Progenitor Cells (HSPCs) clusters or immature blood cells (e.g., myeloblasts, lymphoblasts, megakaryocytes, erythroblasts, reticulocytes) found in the analysed sample. Detection of stem cells, progenitors and immature forms in the sample would be a strong indicator of its bone marrow origine. In opposite, all found cell types are mature and highly differentiated, even though some of them could be found in the bone marrow in certain stages and conditions. Also, no non-hematopoietic stromal cells of supporting microenvironment were detected. In opposite, found cell types include lymphocytes, monocytes, neutrophils and platelets. 
+There are no Hematopoietic Stem and Progenitor Cells (HSPCs) clusters or immature blood cells (e.g., myeloblasts, lymphoblasts, megakaryocytes, erythroblasts, reticulocytes) found in the analysed sample. Detection of stem cells, progenitors and immature forms in the sample would be a strong indicator of its bone marrow origine. In opposite, all found cell types are mature and highly differentiated, even though some of them could be found in the bone marrow in certain stages and conditions. Also, no non-hematopoietic stromal cells of supporting microenvironment were detected. In opposite, found cell types include lymphocytes, monocytes, neutrophils and platelets. (Human Cell Atlas; Mahalingaiah et al.)
 
 Distribution of the healthy bone marrow usually represents the abundance of the neutrophilic cell lineage, including immature forms such as promyelocytes, myelocytes and neutrophils; there is also a high level of erythroblasts; lymphocytes are present in smaller quantities. Thus, the distribution of cells in the studied sample differs from the typical cell distribution in bone marrow. 
 
@@ -136,7 +138,22 @@ Eosinophils and basophils have very low level or can be absent. Neutrophils, lym
 
 Given their unique nature as anucleate cell fragments, the low occurrence of platelets is difficult to interpret based solely on the clustering results.
 
-***Functional state.*** Immune system activation, mostly innate immune system (abundant cytotoxic gamma delta T cells and ILC2s—first responders). Inflammation, most likely viral infectious nature. Expression of CCL genes coding chemokines and IL genes coding cytokines, which are the markers of an active infection inflammation process. Also detected: increased monocytes for antigen presentation, naive B cells for pathogen recognition, and plasma cells driving antibody production.
+***Functional state.*** Immune system activation, mostly innate immune system (abundant cytotoxic gamma delta T cells and ILC2s—first responders). Inflammation, most likely viral infectious nature. Expression of CCL genes coding chemokines and IL genes coding cytokines, which are the markers of an active infection inflammation process. Also detected: increased monocytes for antigen presentation, naive B cells for pathogen recognition, and plasma cells driving antibody production. (Suen et al., 2025; Hams & Fallon,  2012)
 
 ***Conclusion.*** The sample represents a peripheral blood leukocyte preparation, as evidenced by the presence of mature immune cells (lymphocytes, monocytes, neutrophils) and absence of hematopoietic stem/progenitor cells characteristic of bone marrow. Erythrocytes are not detected in scRNA-seq data due to standard sample processing and the lack of nuclear RNA in mature red blood cells. Cell cluster qualitative and quantitative distribution presents peripheral blood in activated immune system status and acute intense inflammation process, most probably caused by viral infection. Further functional gene analysis is required to validate the nature of the pathology.
+
+## **Literature:**
+
+Hams & Fallon,  2012
+
+Human Cell Atlas
+
+Mahalingaiah et al., 2018
+
+Miltenyi Biotec MACS Handbook
+
+MSD Manuals, Cellular Components of the Immune System
+
+Suen et al., 2025
+
 
