@@ -63,7 +63,7 @@ import seaborn as sns
 
 - Select highly variable genes (top 1000 genes were selected).
    
-2. **Cell Population Analysis** - Dimensionality Reduction & Clustering
+2. **Cell Population Analysis** - Dimensionality Reduction & Clustering & Cell Annotation
 
 *Dimensionality Reduction*
 
@@ -77,7 +77,7 @@ import seaborn as sns
 
 - UMAP 2D visualization.
    
-3. **Annotation** - Cell Type Identification & UMAP Visualization of Annotated Cells
+*Annotation* - Cell Type Identification & UMAP Visualization of Annotated Cells
 
 - Gene set enrichment analysis using canonical markers retrieved from PanglaoDB database; 
 
